@@ -13,7 +13,7 @@ WWW::Crawler::Lite - A single-threaded crawler/spider for the web.
     $crawler = WWW::Crawler::Lite->new(
       agent       => 'MySuperBot/1.0',
       url_pattern => $pattern,
-      http_accept => [qw( text/plain text/html )],
+      http_accept => [qw( text/plain text/html application/xhtml+xml )],
       link_parser => 'default',
       on_response => sub {
         my ($url, $res) = @_;
@@ -93,7 +93,7 @@ The default value is '`default`' which uses a naive regexp to do the link parsin
 The upshot of using '`default`' is that the regexp will also find the hyperlinked 
 text or alt-text (of a hyperlinked img tag) and give that to your '`on_link`' handler.
 
-__Default Value:__ `[qw( text/html, text/plain, text/xhtml )]`
+__Default Value:__ `[qw( text/html text/plain application/xhtml+xml )]`
 
 - on_response($url, $response) - CodeRef
 

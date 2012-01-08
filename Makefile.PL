@@ -17,6 +17,9 @@ requires  'Carp'                  => 0;
 requires  'URI::URL'              => 0;
 requires  'HTML::LinkExtor'       => 0;
 
+resources
+  repository      => "https://github.com/jdrago999/WWW-Crawler-Lite",;
+
 tests_recursive();
 WriteAll();
 

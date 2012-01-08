@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                WWW-Crawler-Lite
-version:             0.004
+version:             0.005
 abstract:            A single-threaded crawler/spider for the web.
 license:             ~
 author:              

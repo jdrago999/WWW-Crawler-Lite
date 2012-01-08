@@ -10,7 +10,7 @@ use HTML::LinkExtor;
 use Time::HiRes 'usleep';
 use Carp 'confess';
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 
 sub new
@@ -287,7 +287,7 @@ WWW::Crawler::Lite - A single-threaded crawler/spider for the web.
   $crawler = WWW::Crawler::Lite->new(
     agent       => 'MySuperBot/1.0',
     url_pattern => $pattern,
-    http_accept => [qw( text/plain text/html )],
+    http_accept => [qw( text/plain text/html application/xhtml+xml )],
     link_parser => 'default',
     on_response => sub {
       my ($url, $res) = @_;
@@ -369,7 +369,7 @@ The default value is 'C<default>' which uses a naive regexp to do the link parsi
 The upshot of using 'C<default>' is that the regexp will also find the hyperlinked 
 text or alt-text (of a hyperlinked img tag) and give that to your 'C<on_link>' handler.
 
-B<Default Value:> C<[qw( text/html, text/plain, text/xhtml )]>
+B<Default Value:> C<[qw( text/html text/plain application/xhtml+xml )]>
 
 =item on_response($url, $response) - CodeRef
 
