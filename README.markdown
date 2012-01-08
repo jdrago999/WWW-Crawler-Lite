@@ -17,7 +17,6 @@ WWW::Crawler::Lite - A single-threaded crawler/spider for the web.
       link_parser => 'default',
       on_response => sub {
         my ($url, $res) = @_;
-        
 
       warn "$url contains " . $res->content;
       $downloaded++;
@@ -30,7 +29,6 @@ WWW::Crawler::Lite - A single-threaded crawler/spider for the web.
     },
     on_link     => sub {
       my ($from, $to, $text) = @_;
-      
 
       return if exists($pages{$to}) && $pages{$to} eq 'BAD';
       $pages{$to}++;
@@ -39,7 +37,6 @@ WWW::Crawler::Lite - A single-threaded crawler/spider for the web.
     },
     on_bad_url => sub {
       my ($url) = @_;
-      
 
         # Mark this url as 'bad':
         $pages{$url} = 'BAD';
